@@ -24,6 +24,9 @@ struct DessertsApp: App {
         let filteredRecipeUseCase = DefaultFilteredRecipeUseCase(categoryRecipes: categoryRecipesUseCase)
         let topFiveRecipesUseCase = DefaultTopFiveRecipesUseCase(categoryRecipes: categoryRecipesUseCase)
         let getUserUseCase = DefaultGetUserUseCase(userRepository: userRespository)
+        let getMyRecipeUseCase = DefaultGetMyRecipesUseCase(repository: recipeRepository)
+        let addRecipeUseCase = DefaultAddRecipeUseCase(repository: recipeRepository)
+        let createRecipeUseCase = DefaultCreateRecipeUseCase()
          
         let viewModel = RecipeViewModel(
             getRecipesUseCase: getRecipesUseCase,
@@ -34,7 +37,10 @@ struct DessertsApp: App {
             filteredRecipeUseCase: filteredRecipeUseCase,
             categoryRecipesUseCase: categoryRecipesUseCase, 
             topFiveRecipesUseCase: topFiveRecipesUseCase,
-            getUserUseCase: getUserUseCase
+            getUserUseCase: getUserUseCase,
+            addRecipeUseCase:addRecipeUseCase,
+            createRecipeUseCase: createRecipeUseCase,
+            getMyRecipesUseCase: getMyRecipeUseCase
         )
         
         _recipeViewModel = StateObject(wrappedValue: viewModel)
