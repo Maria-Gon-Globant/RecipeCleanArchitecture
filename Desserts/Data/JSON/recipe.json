@@ -1,0 +1,71 @@
+{
+    "recipes": [
+        {
+            "id": "Brownie-1",
+            "name": "Chocolate Raspberry Brownies",
+            "time": "40 mins",
+            "level": "Easy",
+            "portion": "15 squares",
+            "image": "https://www.themealdb.com/images/media/meals/yypvst1511386427.jpg",
+            "description": "Squidgy and super moreish, these gorgeous foolproof fruity chocolate bakes will be snapped up in seconds",
+            "ingredients": [
+                "200g dark chocolate, broken into chunks",
+                "100g milk chocolate, broken into chunks",
+                "250g pack salted butter",
+                "400g soft light brown sugar",
+                "4 large eggs",
+                "140g plain flour",
+                "50g cocoa powder",
+                "200g raspberries"
+            ],
+            "steps": [
+                "Heat oven to 180C/160C fan/gas 4.",
+                "Line a 20 x 30cm baking tray tin with baking parchment.",
+                "Put the chocolate, butter and sugar in a pan and gently melt, stirring occasionally with a wooden spoon.",
+                "Remove from the heat.",
+                "Stir the eggs, one by one, into the melted chocolate mixture.",
+                "Sieve over the flour and cocoa, and stir in.",
+                "Stir in half the raspberries, scrape into the tray, then scatter over the remaining raspberries.",
+                "Bake on the middle shelf for 30 mins or, if you prefer a firmer texture, for 5 mins more.",
+                "Cool before slicing into squares. Store in an airtight container for up to 3 days."
+            ],
+            "category": "Dessert", 
+            "rate": 5.0
+        },
+        {
+            "id": "Salmon-1",
+            "name": "Salmon Eggs Eggs Benedict",
+            "time": "30 mins",
+            "level": "Dificult",
+            "portion": "4 serves",
+            "image": "https://www.themealdb.com/images/media/meals/1550440197.jpg",
+            "description": "Get your poaching technique honed and serve up this brunch classic – it's easily-doubled to feed a family or crowd",
+            "ingredients": [
+                "4 eggs",
+                "2 tbsp white wine vinegar",
+                "2 English muffins, halved",
+                "a little butter, for spreading",
+                "8 slices smoked salmon",
+                "chopped chives, to serve",
+                "2 tsp lemon juice",
+                "2 tsp white wine vinegar",
+                "3 egg yolks",
+                "125g unsalted butter, diced"
+            ],
+            "steps": [
+                "First make the hollandaise sauce. Put the lemon juice and vinegar in a small bowl, add the egg yolks and whisk with a balloon whisk until light and frothy.",
+                "Place the bowl over a pan of simmering water and whisk until mixture thickens.",
+                "Gradually add the butter, whisking constantly until thick – if it looks like it might be splitting, then whisk off the heat for a few mins.",
+                "Season and keep warm.",
+                "To poach the eggs, bring a large pan of water to the boil and add the vinegar.",
+                "Lower the heat so that the water is simmering gently.",
+                "Stir the water so you have a slight whirlpool, then slide in the eggs one by one.",
+                "Cook each for about 4 mins, then remove with a slotted spoon.",
+                "Lightly toast and butter the muffins, then put a couple of slices of salmon on each half.",
+                "Top each with an egg, spoon over some hollandaise and garnish with chopped chives."
+            ],
+            "category": "Breakfast",
+            "rate": 4.0
+        }
+    ]
+}
