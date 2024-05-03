@@ -13,7 +13,7 @@ class DefaultRemoveFavoriteUseCase: RemoveFavoriteUseCase {
         self.repository = repository
     }
 
-    func removeFavorite(recipe: Recipe) {
+    func execute(recipe: Recipe) {
         repository.removeFavorite(recipe: recipe)
     }
 }

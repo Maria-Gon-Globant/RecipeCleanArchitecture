@@ -7,5 +7,5 @@
 
 import Foundation
 protocol AddFavoriteUseCase {
-    func addFavorite(recipe: Recipe) -> Void
+    func execute(recipe: Recipe) -> Void
 }

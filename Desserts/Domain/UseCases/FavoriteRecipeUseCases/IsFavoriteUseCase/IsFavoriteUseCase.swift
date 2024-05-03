@@ -7,5 +7,5 @@
 
 import Foundation
 protocol IsFavoriteUseCase {
-    func isFavorite(recipe: Recipe) -> Bool
+    func execute(recipe: Recipe) -> Bool
 }

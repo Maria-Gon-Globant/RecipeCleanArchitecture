@@ -13,7 +13,7 @@ class DefaultAddFavoriteUseCase: AddFavoriteUseCase {
         self.repository = repository
     }
 
-    func addFavorite(recipe: Recipe) {
+    func execute(recipe: Recipe) {
         repository.addFavorite(recipe: recipe)
     }
 }
