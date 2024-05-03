@@ -16,7 +16,7 @@ class DefaultTopFiveRecipesUseCase: TopFiveRecipesUseCase {
     }
     
     private func getRecipes(category: String){
-        recipes = categoryRecipes.getRecipesByCategory(category: category)
+        recipes = categoryRecipes.execute(category: category)
     }
     
     func execute(category: String) -> [Recipe] {
