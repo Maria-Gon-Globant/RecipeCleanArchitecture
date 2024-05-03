@@ -7,5 +7,5 @@
 
 import Foundation
 protocol AddRecipeUseCase {
-    func addRecipe(recipe: Recipe) -> Void
+    func execute(recipe: Recipe) -> Void
 }

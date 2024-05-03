@@ -13,7 +13,7 @@ class DefaultAddRecipeUseCase: AddRecipeUseCase {
         self.repository = repository
     }
 
-    func addRecipe(recipe: Recipe) {
+    func execute(recipe: Recipe) {
         repository.addRecipe(recipe: recipe)
     }
 }

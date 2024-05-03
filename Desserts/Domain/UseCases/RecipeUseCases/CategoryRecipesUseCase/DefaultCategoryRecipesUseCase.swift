@@ -20,7 +20,7 @@ class DefaultCategoryRecipesUseCase: CategoryRecipesUseCase {
         recipes = getRecipesUseCase.execute()
     }
     
-    func getRecipesByCategory(category: String) -> [Recipe] {
+    func execute(category: String) -> [Recipe] {
         return category == "All" ? recipes : recipes.filter {$0.category.lowercased().contains(category.lowercased())}
     }
 }

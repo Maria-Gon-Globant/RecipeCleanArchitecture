@@ -7,5 +7,5 @@
 
 import Foundation
 protocol GetMyRecipesUseCase {
-    func getMyRecipes() -> [Recipe]
+    func execute() -> [Recipe]
 }

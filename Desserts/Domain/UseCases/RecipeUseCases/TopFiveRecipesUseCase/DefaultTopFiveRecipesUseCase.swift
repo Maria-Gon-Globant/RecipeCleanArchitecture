@@ -19,7 +19,7 @@ class DefaultTopFiveRecipesUseCase: TopFiveRecipesUseCase {
         recipes = categoryRecipes.getRecipesByCategory(category: category)
     }
     
-    func getTopFive(category: String) -> [Recipe] {
+    func execute(category: String) -> [Recipe] {
         getRecipes(category: category)
         return Array(recipes.sorted{ $0.rate > $1.rate }.prefix(min(5, recipes.count)))
     }
