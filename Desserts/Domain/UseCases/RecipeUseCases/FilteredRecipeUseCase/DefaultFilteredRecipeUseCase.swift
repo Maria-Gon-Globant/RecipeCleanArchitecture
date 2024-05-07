@@ -15,7 +15,7 @@ class DefaultFilteredRecipeUseCase: FilteredRecipeUseCase {
     }
     
     private func getRecipes(category: String){
-        recipes = categoryRecipes.getRecipesByCategory(category: category)
+        recipes = categoryRecipes.execute(category: category)
     }
     func execute(searchText: String, category: String) -> [Recipe] {
         getRecipes(category: category)
