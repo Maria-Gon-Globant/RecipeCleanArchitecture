@@ -10,18 +10,13 @@ class LocalFavoriteRepository: FavoriteRepository {
     private let favoritesKey = "favorites"
 
     func fetchFavorites() -> [Recipe] {
-        guard let data = UserDefaults.standard.data(forKey: favoritesKey),
-              let favoritesDTO = try? JSONDecoder().decode([RecipeDTO].self, from: data) else {
-            return []
-        }
-        let favorites = favoritesDTO.map{$0.toRecipe()}
-        return favorites
+        let data: FavoritesContainerDTO = Bundle.main.decode(file:"favorites.json")
+        return data.favorites.map { $0.toRecipe() }
     }
 
     func saveFavorites(recipes: [Recipe]) {
-        if let data = try? JSONEncoder().encode(recipes.map{$0.toRecipeDTO()}) {
-            UserDefaults.standard.set(data, forKey: favoritesKey)
-        }
+        let data: FavoritesContainerDTO = Bundle.main.decode(file:"favorites.json")
+        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, to: "favorites.json", key: "favorites")
     }
 
     func addFavorite(recipe: Recipe) {

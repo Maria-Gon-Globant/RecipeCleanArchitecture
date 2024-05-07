@@ -14,19 +14,13 @@ class LocalRecipeRepository: RecipeRepository {
     }
     
     func saveRecipe(recipes: [Recipe]) {
-        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, to: "recipe.json")
-        if let data = try? JSONEncoder().encode(recipes.map{$0.toRecipeDTO()}) {
-            UserDefaults.standard.set(data, forKey: "myRecipes")
-        }
+        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, to: "recipe.json", key: "recipe")
+        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, to: "myRecipes.json", key: "myRecipes")
     }
     
     func fetchMyRecipes() -> [Recipe] {
-        guard let data = UserDefaults.standard.data(forKey: "myRecipes"),
-              let myRecipesDTO = try? JSONDecoder().decode([RecipeDTO].self, from: data) else {
-            return []
-        }
-        let myRecipes = myRecipesDTO.map{$0.toRecipe()}
-        return myRecipes
+        let data: RecipesContainerDTO = Bundle.main.decode(file:"myRecipes.json")
+        return data.recipes.map { $0.toRecipe() }
     }
 
     func addRecipe(recipe: Recipe) {
