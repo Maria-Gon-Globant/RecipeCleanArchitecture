@@ -21,18 +21,26 @@ enum Category: String, CaseIterable, Identifiable {
     case drink = "Drink"
 }
 
+enum Level: String, CaseIterable, Identifiable {
+    var id: String { return self.rawValue }
+    
+    case easy = "Easy"
+    case medium = "Medium"
+    case difficult = "Difficult"
+}
+
 struct Recipe: Identifiable, Hashable {
     var id : String
     var name: String
     var time: String
-    var level: String
+    var level: Level.ID
     var portion: String
     
     var image: URL
     var description: String
     var ingredients: [String]
     var steps: [String]
-    var category: Category.RawValue
+    var category: Category.ID
     var rate: Double
     
     //var datePublished: Date
