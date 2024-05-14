@@ -12,7 +12,7 @@ extension RecipeDTO {
             id: id,
             name: name,
             time: time,
-            level: level,
+            level: Level(rawValue: level)?.id ?? "",
             portion: portion,
             image: URL(string: image) ?? URL(string: "https://example.com/placeholder.jpg")!,
             description: description,
