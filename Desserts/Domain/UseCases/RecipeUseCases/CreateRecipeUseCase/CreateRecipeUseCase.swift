@@ -7,5 +7,15 @@
 
 import Foundation
 protocol CreateRecipeUseCase {
-    func execute(name: String, description: String, ingredients: String, steps: String, level: String, portion: String, time: String, image: String, category: String) -> Recipe
+    func execute(
+        name: String,
+        description: String,
+        ingredients: String,
+        steps: String,
+        level: String,
+        portion: String,
+        time: String,
+        image: String,
+        category: String
+    ) -> Recipe
 }
