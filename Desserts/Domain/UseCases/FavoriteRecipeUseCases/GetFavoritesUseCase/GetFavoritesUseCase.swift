@@ -7,5 +7,5 @@
 
 import Foundation
 protocol GetFavoritesUseCase {
-    func getFavorites() -> [Recipe]
+    func execute() -> [Recipe]
 }

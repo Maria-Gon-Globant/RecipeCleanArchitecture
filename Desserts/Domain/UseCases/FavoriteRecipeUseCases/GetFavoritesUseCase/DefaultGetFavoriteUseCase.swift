@@ -13,7 +13,7 @@ class DefaultGetFavoriteUseCase: GetFavoritesUseCase {
         self.repository = repository
     }
 
-    func getFavorites() -> [Recipe] {
+    func execute() -> [Recipe] {
         return repository.fetchFavorites()
     }
 }

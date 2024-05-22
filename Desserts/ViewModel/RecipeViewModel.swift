@@ -31,7 +31,22 @@ class RecipeViewModel: ObservableObject {
     private let createRecipeUseCase: CreateRecipeUseCase
     private let getMyRecipesUseCase: GetMyRecipesUseCase
     
-    init(getRecipesUseCase: GetRecipesUseCase, getFavoritesRecipeUseCase: GetFavoritesUseCase, addFavoriteRecipeUseCase: AddFavoriteUseCase, removeFavoriteRecipeUseCase: RemoveFavoriteUseCase, isFavoriteRecipeUseCase: IsFavoriteUseCase, filteredRecipeUseCase: FilteredRecipeUseCase, categoryRecipesUseCase: CategoryRecipesUseCase, topFiveRecipesUseCase: TopFiveRecipesUseCase, getUserUseCase: GetUserUseCase, addRecipeUseCase: AddRecipeUseCase, createRecipeUseCase: CreateRecipeUseCase, getMyRecipesUseCase: GetMyRecipesUseCase) {
+    init(
+        getRecipesUseCase: GetRecipesUseCase,
+        getFavoritesRecipeUseCase: GetFavoritesUseCase,
+        addFavoriteRecipeUseCase: AddFavoriteUseCase,
+        removeFavoriteRecipeUseCase: RemoveFavoriteUseCase,
+        isFavoriteRecipeUseCase: IsFavoriteUseCase,
+        filteredRecipeUseCase: FilteredRecipeUseCase,
+        categoryRecipesUseCase: CategoryRecipesUseCase,
+        topFiveRecipesUseCase: TopFiveRecipesUseCase,
+        getUserUseCase: GetUserUseCase,
+        addRecipeUseCase: AddRecipeUseCase,
+        createRecipeUseCase: CreateRecipeUseCase,
+        getMyRecipesUseCase: GetMyRecipesUseCase
+    ) {
+        
+        
         self.getRecipesUseCase = getRecipesUseCase
         self.getFavoritesRecipeUseCase = getFavoritesRecipeUseCase
         self.addFavoriteRecipeUseCase = addFavoriteRecipeUseCase
@@ -48,8 +63,8 @@ class RecipeViewModel: ObservableObject {
         fetchRecipes()
         fetchUsers()
         loadFavorites()
-        loadCategoryRecipes(category: "All")
-        loadTopFiveRecipes(category: "All")
+        loadCategoryRecipes(category: category)
+        loadTopFiveRecipes(category: category)
     }
     
     func fetchRecipes() {
@@ -69,41 +84,62 @@ class RecipeViewModel: ObservableObject {
     }
     
     private func loadFavorites() {
-        favorites = getFavoritesRecipeUseCase.getFavorites()
+        favorites = getFavoritesRecipeUseCase.execute()
     }
     
     func isFavorite(recipe: Recipe) -> Bool {
-        isFavoriteRecipeUseCase.isFavorite(recipe: recipe)
+        isFavoriteRecipeUseCase.execute(recipe: recipe)
     }
     
     func toggleFavorite(recipe: Recipe) {
-        if isFavoriteRecipeUseCase.isFavorite(recipe: recipe) {
-            removeFavoriteRecipeUseCase.removeFavorite(recipe: recipe)
+        if isFavoriteRecipeUseCase.execute(recipe: recipe) {
+            removeFavoriteRecipeUseCase.execute(recipe: recipe)
         } else {
-            addFavoriteRecipeUseCase.addFavorite(recipe: recipe)
+            addFavoriteRecipeUseCase.execute(recipe: recipe)
         }
         loadFavorites()
     }
     
     var filteredRecipe: [Recipe] {
-        return filteredRecipeUseCase.filterRecipe(searchText: searchText, category: category)
+        return filteredRecipeUseCase.execute(searchText: searchText, category: category)
     }
     
     func loadCategoryRecipes(category:String){
         self.category = category
-        categoryRecipes = categoryRecipesUseCase.getRecipesByCategory(category: category)
+        categoryRecipes = categoryRecipesUseCase.execute(category: category)
     }
     
     func loadTopFiveRecipes(category: String) {
-        topFiveRecipes = topFiveRecipesUseCase.getTopFive(category: category)
+        topFiveRecipes = topFiveRecipesUseCase.execute(category: category)
     }
     
-    func addRecipe(name: String, description: String, ingredients: String, steps: String, level: String, portion: String, time: String, image: String, category: String){
-        var recipe = createRecipeUseCase.createRecipe(name: name, description: description, ingredients: ingredients, steps: steps, level: level, portion: portion, time: time, image: image, category: category)
-        addRecipeUseCase.addRecipe(recipe: recipe)
+    func addRecipe(
+        name: String,
+        description: String,
+        ingredients: String,
+        steps: String,
+        level: String,
+        portion: String,
+        time: String,
+        image: String,
+        category: String
+    ){
+            
+        let recipe = createRecipeUseCase.execute(
+            name: name,
+            description: description,
+            ingredients: ingredients,
+            steps: steps,
+            level: level,
+            portion: portion,
+            time: time,
+            image: image,
+            category: category
+        )
+        addRecipeUseCase.execute(recipe: recipe)
     }
     
     func getMyRecipes() -> [Recipe] {
-        return getMyRecipesUseCase.getMyRecipes()
+        return getMyRecipesUseCase.execute()
     }
 }

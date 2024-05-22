@@ -7,5 +7,5 @@
 
 import Foundation
 protocol RemoveFavoriteUseCase {
-    func removeFavorite(recipe: Recipe) -> Void
+    func execute(recipe: Recipe) -> Void
 }

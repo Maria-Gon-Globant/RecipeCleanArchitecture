@@ -12,7 +12,7 @@ class DefaultGetMyRecipesUseCase: GetMyRecipesUseCase {
     init(repository: RecipeRepository) {
         self.repository = repository
     }
-    func getMyRecipes() -> [Recipe] {
+    func execute() -> [Recipe] {
         return repository.fetchMyRecipes()
     }
 }

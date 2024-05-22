@@ -7,5 +7,5 @@
 
 import Foundation
 protocol CategoryRecipesUseCase {
-    func getRecipesByCategory(category: String) -> [Recipe]
+    func execute(category: String) -> [Recipe]
 }

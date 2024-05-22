@@ -7,5 +7,5 @@
 
 import Foundation
 protocol TopFiveRecipesUseCase {
-    func getTopFive(category: String) -> [Recipe]
+    func execute(category: String) -> [Recipe]
 }

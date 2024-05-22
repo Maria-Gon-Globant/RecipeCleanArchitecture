@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FilteredRecipeUseCase {
-    func filterRecipe(searchText: String, category: String) -> [Recipe]
+    func execute(searchText: String, category: String) -> [Recipe]
 }

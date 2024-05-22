@@ -15,9 +15,9 @@ class DefaultFilteredRecipeUseCase: FilteredRecipeUseCase {
     }
     
     private func getRecipes(category: String){
-        recipes = categoryRecipes.getRecipesByCategory(category: category)
+        recipes = categoryRecipes.execute(category: category)
     }
-    func filterRecipe(searchText: String, category: String) -> [Recipe] {
+    func execute(searchText: String, category: String) -> [Recipe] {
         getRecipes(category: category)
         
         return searchText == "" ? recipes : recipes.filter {$0.name.lowercased().contains(searchText.lowercased())}
