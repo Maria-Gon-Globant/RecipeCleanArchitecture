@@ -9,17 +9,17 @@ import Foundation
 class LocalRecipeRepository: RecipeRepository {
     
     func getRecipes() -> [Recipe] {
-        let data: RecipesContainerDTO = Bundle.main.decode(file:"recipe.json")
+        let data: RecipesContainerDTO = Bundle.main.decode(file:JsonFiles.Recipe.id)
         return data.recipes.map { $0.toRecipe() }
     }
     
     func saveRecipe(recipes: [Recipe]) {
-        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: "recipe", to: "recipe.json")
-        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: "myRecipes", to: "myRecipes.json")
+        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: JsonKeys.Recipe.id, to: JsonFiles.Recipe.id)
+        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: JsonKeys.MyRecipes.id, to: JsonFiles.MyRecipes.id)
     }
     
     func fetchMyRecipes() -> [Recipe] {
-        let data: RecipesContainerDTO = Bundle.main.decode(file:"myRecipes.json")
+        let data: RecipesContainerDTO = Bundle.main.decode(file: JsonFiles.MyRecipes.id)
         return data.recipes.map { $0.toRecipe() }
     }
 

@@ -9,7 +9,7 @@ import Foundation
 class LocalUserRepository: UserRepository {
     
     func getUser(completion: @escaping (Result<[User], Error>) -> Void) {
-        let data: UsersContainerDTO = Bundle.main.decode(file:"users.json")
+        let data: UsersContainerDTO = Bundle.main.decode(file: JsonFiles.Users.id)
         let users = data.users.map { $0.toUser() }
         completion(.success(users))
     }

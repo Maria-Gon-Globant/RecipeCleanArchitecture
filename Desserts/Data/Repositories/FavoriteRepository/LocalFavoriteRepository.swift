@@ -7,16 +7,15 @@
 
 import Foundation
 class LocalFavoriteRepository: FavoriteRepository {
-    private let favoritesKey = "favorites"
 
     func fetchFavorites() -> [Recipe] {
-        let data: FavoritesContainerDTO = Bundle.main.decode(file:"favorites.json")
+        let data: FavoritesContainerDTO = Bundle.main.decode(file: JsonFiles.Favorites.id)
         return data.favorites.map { $0.toRecipe() }
     }
 
     func saveFavorites(recipes: [Recipe]) {
-        let data: FavoritesContainerDTO = Bundle.main.decode(file:"favorites.json")
-        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, to: "favorites.json", key: "favorites")
+        let data: FavoritesContainerDTO = Bundle.main.decode(file: JsonFiles.Favorites.id)
+        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: JsonKeys.Favorites.id, to: JsonFiles.Favorites.id)
     }
 
     func addFavorite(recipe: Recipe) {
@@ -34,7 +33,7 @@ class LocalFavoriteRepository: FavoriteRepository {
     }
 
     func isFavorite(recipe: Recipe) -> Bool {
-        var favorites = fetchFavorites()
+        let favorites = fetchFavorites()
         return favorites.contains(where: { $0.id == recipe.id })
     }
 }
