@@ -27,3 +27,21 @@ extension Double {
         return formatter.string(from: NSNumber(value: self)) ?? ""
     }
 }
+
+enum JsonFiles: String {
+    var id: String { return self.rawValue }
+    
+    case Favorites = "favorites.json"
+    case Recipe = "recipe.json"
+    case MyRecipes = "myRecipes.json"
+    case Users = "users.json"
+}
+
+enum JsonKeys: String {
+    var id: String { return self.rawValue }
+    
+    case Favorites = "favorites"
+    case Recipe = "recipes"
+    case MyRecipes = "myRecipes"
+    case Users = "users"
+}
