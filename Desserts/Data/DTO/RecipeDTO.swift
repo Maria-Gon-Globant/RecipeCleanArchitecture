@@ -28,3 +28,11 @@ struct RecipeDTO: Codable {
 struct RecipesContainerDTO: Decodable {
     let recipes: [RecipeDTO]
 }
+
+struct MyRecipesContainerDTO: Decodable {
+    let myRecipes: [RecipeDTO]
+}
+
+struct FavoritesContainerDTO: Decodable {
+    let favorites: [RecipeDTO]
+}

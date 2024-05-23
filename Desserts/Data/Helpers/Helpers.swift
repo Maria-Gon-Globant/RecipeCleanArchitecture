@@ -47,20 +47,23 @@ extension Bundle {
                 }
             }.resume()
     }
-    func encode<T: Encodable>(data: T, to file: String) {
-            let encoder = JSONEncoder()
+    func encode<T: Encodable>(data: T, key: String, to file: String) {
+        let existingObjects = [key: data]
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        do {
             
-            do {
-                let jsonData = try encoder.encode(data)
-                guard let url = self.url(forResource: file, withExtension: "json") else {
-                    fatalError("Could not find \(file) in bundle.")
-                }
-                
-                try jsonData.write(to: url)
-                print("Data saved successfully to \(file).json")
-            } catch {
-                print("Encoding error: \(error)")
-                fatalError("Could not encode data to \(file).json")
+            let jsonData = try encoder.encode(existingObjects)
+            guard let jsonString = String(data: jsonData, encoding: .utf8),
+                  let fileURL = self.url(forResource: file, withExtension: nil)
+            else {
+                fatalError("Could not create jsonString or find \(file) in bundle.")
             }
+            try jsonData.write(to: fileURL)
+            print("Data saved successfully to \(file)")
+        } catch {
+            print("Encoding error: \(error)")
+            fatalError("Could not encode data to \(file)")
         }
+    }
 }

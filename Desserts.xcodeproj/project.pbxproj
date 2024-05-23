@@ -67,6 +67,8 @@
 		619087FA2BE421AD00CA1344 /* DefaultCreateRecipeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619087F92BE421AD00CA1344 /* DefaultCreateRecipeUseCase.swift */; };
 		619087FD2BE426FD00CA1344 /* GetMyRecipesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619087FC2BE426FD00CA1344 /* GetMyRecipesUseCase.swift */; };
 		619087FF2BE4270B00CA1344 /* DefaultGetMyRecipesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619087FE2BE4270B00CA1344 /* DefaultGetMyRecipesUseCase.swift */; };
+		619088012BE52DF700CA1344 /* favorites.json in Resources */ = {isa = PBXBuildFile; fileRef = 619088002BE52DF700CA1344 /* favorites.json */; };
+		619088032BE52E4300CA1344 /* myRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 619088022BE52E4300CA1344 /* myRecipes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +133,8 @@
 		619087F92BE421AD00CA1344 /* DefaultCreateRecipeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCreateRecipeUseCase.swift; sourceTree = "<group>"; };
 		619087FC2BE426FD00CA1344 /* GetMyRecipesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyRecipesUseCase.swift; sourceTree = "<group>"; };
 		619087FE2BE4270B00CA1344 /* DefaultGetMyRecipesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGetMyRecipesUseCase.swift; sourceTree = "<group>"; };
+		619088002BE52DF700CA1344 /* favorites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = favorites.json; sourceTree = "<group>"; };
+		619088022BE52E4300CA1344 /* myRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = myRecipes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +469,8 @@
 			children = (
 				615DF3672BD81A7D00F64ED3 /* recipe.json */,
 				619087DB2BE4018500CA1344 /* users.json */,
+				619088002BE52DF700CA1344 /* favorites.json */,
+				619088022BE52E4300CA1344 /* myRecipes.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -590,9 +596,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				619087DC2BE4018500CA1344 /* users.json in Resources */,
+				619088032BE52E4300CA1344 /* myRecipes.json in Resources */,
 				5C78DE782BD843B60063AA0F /* recipe.json in Resources */,
 				6173861F2BC582AC005D46CD /* Preview Assets.xcassets in Resources */,
 				6173861C2BC582AC005D46CD /* Assets.xcassets in Resources */,
+				619088012BE52DF700CA1344 /* favorites.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
