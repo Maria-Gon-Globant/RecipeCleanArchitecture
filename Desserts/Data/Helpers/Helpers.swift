@@ -47,7 +47,7 @@ extension Bundle {
                 }
             }.resume()
     }
-    func encode<T: Encodable>(data: T, to file: String, key: String) {
+    func encode<T: Encodable>(data: T, key: String, to file: String) {
         let existingObjects = [key: data]
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
