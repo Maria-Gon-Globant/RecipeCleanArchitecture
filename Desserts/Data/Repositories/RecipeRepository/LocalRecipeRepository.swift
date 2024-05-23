@@ -14,8 +14,8 @@ class LocalRecipeRepository: RecipeRepository {
     }
     
     func saveRecipe(recipes: [Recipe]) {
-        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, to: "recipe.json", key: "recipe")
-        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, to: "myRecipes.json", key: "myRecipes")
+        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: "recipe", to: "recipe.json")
+        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: "myRecipes", to: "myRecipes.json")
     }
     
     func fetchMyRecipes() -> [Recipe] {
