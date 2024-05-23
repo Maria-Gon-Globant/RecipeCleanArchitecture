@@ -8,17 +8,21 @@
 import Foundation
 extension RecipeDTO {
     func toRecipe() -> Recipe {
-        Recipe(
+        let level = Level(rawValue: level)?.id ?? ""
+        let image = URL(string: image) ?? URL(string: "https://example.com/placeholder.jpg")!
+        let category = Category(rawValue: category)?.rawValue ?? ""
+        
+        return Recipe(
             id: id,
             name: name,
             time: time,
             level: level,
             portion: portion,
-            image: URL(string: image) ?? URL(string: "https://example.com/placeholder.jpg")!,
+            image: image,
             description: description,
             ingredients: ingredients,
             steps: steps,
-            category: Category(rawValue: category)?.rawValue ?? "",
+            category: category,
             rate: rate
         )
     }
