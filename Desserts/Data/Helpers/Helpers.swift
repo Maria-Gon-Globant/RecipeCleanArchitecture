@@ -54,9 +54,10 @@ extension Bundle {
         do {
             
             let jsonData = try encoder.encode(existingObjects)
-            var jsonString = String(data: jsonData, encoding: .utf8)!
-            guard let fileURL = self.url(forResource: file, withExtension: nil) else {
-                fatalError("Could not find \(file) in bundle.")
+            guard let jsonString = String(data: jsonData, encoding: .utf8),
+                  let fileURL = self.url(forResource: file, withExtension: nil)
+            else {
+                fatalError("Could not create jsonString or find \(file) in bundle.")
             }
             try jsonData.write(to: fileURL)
             print("Data saved successfully to \(file)")
