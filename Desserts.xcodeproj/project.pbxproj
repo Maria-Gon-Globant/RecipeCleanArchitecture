@@ -18,6 +18,8 @@
 		61364B722C0523470057554A /* IsValidNumberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61364B712C0523470057554A /* IsValidNumberUseCase.swift */; };
 		61364B752C0523BD0057554A /* IsValidStringLengthUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61364B742C0523BD0057554A /* IsValidStringLengthUseCaseProtocol.swift */; };
 		61364B772C0523C70057554A /* IsValidStringLengthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61364B762C0523C70057554A /* IsValidStringLengthUseCase.swift */; };
+		61364B7A2C0529610057554A /* HasNewLineUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61364B792C0529610057554A /* HasNewLineUseCaseProtocol.swift */; };
+		61364B7C2C05296F0057554A /* HasNewLineUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61364B7B2C05296F0057554A /* HasNewLineUseCase.swift */; };
 		614784FE2BDAB5A7007364C3 /* GetFavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614784FD2BDAB5A7007364C3 /* GetFavoritesUseCase.swift */; };
 		614785002BDAB5CE007364C3 /* DefaultGetFavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614784FF2BDAB5CE007364C3 /* DefaultGetFavoriteUseCase.swift */; };
 		614785032BDAB676007364C3 /* AddFavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614785022BDAB676007364C3 /* AddFavoriteUseCase.swift */; };
@@ -86,6 +88,8 @@
 		61364B712C0523470057554A /* IsValidNumberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsValidNumberUseCase.swift; sourceTree = "<group>"; };
 		61364B742C0523BD0057554A /* IsValidStringLengthUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsValidStringLengthUseCaseProtocol.swift; sourceTree = "<group>"; };
 		61364B762C0523C70057554A /* IsValidStringLengthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsValidStringLengthUseCase.swift; sourceTree = "<group>"; };
+		61364B792C0529610057554A /* HasNewLineUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNewLineUseCaseProtocol.swift; sourceTree = "<group>"; };
+		61364B7B2C05296F0057554A /* HasNewLineUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNewLineUseCase.swift; sourceTree = "<group>"; };
 		614784FD2BDAB5A7007364C3 /* GetFavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavoritesUseCase.swift; sourceTree = "<group>"; };
 		614784FF2BDAB5CE007364C3 /* DefaultGetFavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGetFavoriteUseCase.swift; sourceTree = "<group>"; };
 		614785022BDAB676007364C3 /* AddFavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteUseCase.swift; sourceTree = "<group>"; };
@@ -240,6 +244,15 @@
 			path = IsValidStringLengthUseCase;
 			sourceTree = "<group>";
 		};
+		61364B782C0529530057554A /* HasNewLineUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				61364B792C0529610057554A /* HasNewLineUseCaseProtocol.swift */,
+				61364B7B2C05296F0057554A /* HasNewLineUseCase.swift */,
+			);
+			path = HasNewLineUseCase;
+			sourceTree = "<group>";
+		};
 		614784F32BDAB3E0007364C3 /* GetFavoritesUseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +303,7 @@
 		6147850F2BDAC2A2007364C3 /* RecipeUseCases */ = {
 			isa = PBXGroup;
 			children = (
+				61364B782C0529530057554A /* HasNewLineUseCase */,
 				61364B732C0523AE0057554A /* IsValidStringLengthUseCase */,
 				61364B6E2C0522D80057554A /* IsValidNumberUseCase */,
 				619087FB2BE426E800CA1344 /* GetMyRecipesUseCase */,
@@ -659,6 +673,7 @@
 				61364B752C0523BD0057554A /* IsValidStringLengthUseCaseProtocol.swift in Sources */,
 				614785242BE122A7007364C3 /* RecipeImageCard.swift in Sources */,
 				614785342BE14C37007364C3 /* DefaultCategoryRecipesUseCase.swift in Sources */,
+				61364B7A2C0529610057554A /* HasNewLineUseCaseProtocol.swift in Sources */,
 				614785132BDAE286007364C3 /* FavoriteRepository.swift in Sources */,
 				614785262BE12465007364C3 /* RecipeCardH.swift in Sources */,
 				614785322BE14C2A007364C3 /* CategoryRecipesUseCase.swift in Sources */,
@@ -689,6 +704,7 @@
 				619087DE2BE4021800CA1344 /* UserMapper.swift in Sources */,
 				614785052BDAB699007364C3 /* RemoveFavoriteUseCase.swift in Sources */,
 				5C78DE722BD8278F0063AA0F /* RecipeRepository.swift in Sources */,
+				61364B7C2C05296F0057554A /* HasNewLineUseCase.swift in Sources */,
 				617067642BCA255A00A44FB0 /* RecipeCardV.swift in Sources */,
 				619087F02BE4048800CA1344 /* LocalUserRepository.swift in Sources */,
 				6147853E2BE3D62F007364C3 /* NewRecipeView.swift in Sources */,
