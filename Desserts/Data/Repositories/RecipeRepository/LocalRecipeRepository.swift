@@ -19,8 +19,8 @@ class LocalRecipeRepository: RecipeRepository {
     }
     
     func fetchMyRecipes() -> [Recipe] {
-        let data: RecipesContainerDTO = Bundle.main.decode(file: JsonFiles.MyRecipes.id)
-        return data.recipes.map { $0.toRecipe() }
+        let data: MyRecipesContainerDTO = Bundle.main.decode(file: JsonFiles.MyRecipes.id)
+        return data.myRecipes.map { $0.toRecipe() }
     }
 
     func addRecipe(recipe: Recipe) {
