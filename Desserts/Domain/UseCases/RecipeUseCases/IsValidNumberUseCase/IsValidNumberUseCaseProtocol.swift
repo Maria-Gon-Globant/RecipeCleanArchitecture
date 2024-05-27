@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Foundation
 protocol IsValidNumberUseCaseProtocol {
     func execute(num: String, maxNum: Int) -> Bool
 }

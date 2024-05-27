@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Foundation
 class IsValidNumberUseCase: IsValidNumberUseCaseProtocol {
     func execute(num: String, maxNum: Int) -> Bool {
         guard let number = Double(num) else {
