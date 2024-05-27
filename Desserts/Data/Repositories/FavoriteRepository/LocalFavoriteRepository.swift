@@ -14,7 +14,6 @@ class LocalFavoriteRepository: FavoriteRepository {
     }
 
     func saveFavorites(recipes: [Recipe]) {
-        let data: FavoritesContainerDTO = Bundle.main.decode(file: JsonFiles.Favorites.id)
         Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: JsonKeys.Favorites.id, to: JsonFiles.Favorites.id)
     }
 

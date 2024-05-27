@@ -12,6 +12,7 @@ class RecipeViewModel: ObservableObject {
     @Published var categoryRecipes: [Recipe] = []
     @Published var topFiveRecipes: [Recipe] = []
     @Published var favorites: [Recipe] = []
+    @Published var myRecipes: [Recipe] = []
     @Published var users: [User] = []
     @Published var searchText: String = ""
     
@@ -63,6 +64,7 @@ class RecipeViewModel: ObservableObject {
         fetchRecipes()
         fetchUsers()
         loadFavorites()
+        getMyRecipes()
         loadCategoryRecipes(category: category)
         loadTopFiveRecipes(category: category)
     }
@@ -124,7 +126,7 @@ class RecipeViewModel: ObservableObject {
         image: String,
         category: String
     ){
-            
+        
         let recipe = createRecipeUseCase.execute(
             name: name,
             description: description,
@@ -139,7 +141,7 @@ class RecipeViewModel: ObservableObject {
         addRecipeUseCase.execute(recipe: recipe)
     }
     
-    func getMyRecipes() -> [Recipe] {
-        return getMyRecipesUseCase.execute()
+    func getMyRecipes() {
+        myRecipes = getMyRecipesUseCase.execute()
     }
 }
