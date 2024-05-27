@@ -28,7 +28,7 @@ struct ProfileView: View {
             Spacer()
             HStack(spacing: 25){
                 VStack{
-                    Text("\(recipesVM.recipes.count)")
+                    Text("\(recipesVM.myRecipes.count)")
                     Text("Recipes")
                 }
                 VStack{
@@ -44,7 +44,7 @@ struct ProfileView: View {
             Section{
                 ScrollView{
                     LazyVStack{
-                        ForEach(recipesVM.recipes) {
+                        ForEach(recipesVM.myRecipes) {
                             recipe in
                             NavigationLink(destination: {RecipeView(recipe: recipe)}, label: {
                                 RecipeCardH(recipe: recipe)
