@@ -9,6 +9,6 @@ import Foundation
 class IsValidStringLengthUseCase: IsValidStringLengthUseCaseProtocol {
     func execute(str: String, maxLength: Int) -> Bool {
         let count = str.filter{ $0 != "\n" }.count
-        return count >= 5 && count <= maxLength && str.isEmpty
+        return count >= 5 && count <= maxLength && !str.isEmpty
     }
 }
