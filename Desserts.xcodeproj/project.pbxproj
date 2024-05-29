@@ -51,6 +51,8 @@
 		6150A5BA2C077540009A2F2A /* ValidateDescriptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150A5B92C077540009A2F2A /* ValidateDescriptionUseCase.swift */; };
 		6150A5BD2C077673009A2F2A /* ValidateStepsUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150A5BC2C077673009A2F2A /* ValidateStepsUseCaseProtocol.swift */; };
 		6150A5BF2C07767B009A2F2A /* ValidateStepsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150A5BE2C07767B009A2F2A /* ValidateStepsUseCase.swift */; };
+		6150A5C22C077754009A2F2A /* ValidateIngredientsUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150A5C12C077754009A2F2A /* ValidateIngredientsUseCaseProtocol.swift */; };
+		6150A5C42C0785CD009A2F2A /* ValidateIngredientsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150A5C32C0785CD009A2F2A /* ValidateIngredientsUseCase.swift */; };
 		6170675B2BCA1E8B00A44FB0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6170675A2BCA1E8B00A44FB0 /* HomeView.swift */; };
 		6170675D2BCA1EE500A44FB0 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6170675C2BCA1EE500A44FB0 /* FavoritesView.swift */; };
 		6170675F2BCA1F0300A44FB0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6170675E2BCA1F0300A44FB0 /* ProfileView.swift */; };
@@ -127,6 +129,8 @@
 		6150A5B92C077540009A2F2A /* ValidateDescriptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateDescriptionUseCase.swift; sourceTree = "<group>"; };
 		6150A5BC2C077673009A2F2A /* ValidateStepsUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateStepsUseCaseProtocol.swift; sourceTree = "<group>"; };
 		6150A5BE2C07767B009A2F2A /* ValidateStepsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateStepsUseCase.swift; sourceTree = "<group>"; };
+		6150A5C12C077754009A2F2A /* ValidateIngredientsUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateIngredientsUseCaseProtocol.swift; sourceTree = "<group>"; };
+		6150A5C32C0785CD009A2F2A /* ValidateIngredientsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateIngredientsUseCase.swift; sourceTree = "<group>"; };
 		615DF3672BD81A7D00F64ED3 /* recipe.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
 		6170675A2BCA1E8B00A44FB0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6170675C2BCA1EE500A44FB0 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 		6147850F2BDAC2A2007364C3 /* RecipeUseCases */ = {
 			isa = PBXGroup;
 			children = (
+				6150A5C02C077746009A2F2A /* ValidateIngredientsUseCase */,
 				6150A5BB2C077663009A2F2A /* ValidateStepsUseCase */,
 				6150A5B62C077520009A2F2A /* ValidateDescriptionUseCase */,
 				6150A5B12C077297009A2F2A /* ValidateSectionUseCase */,
@@ -446,6 +451,15 @@
 				6150A5BE2C07767B009A2F2A /* ValidateStepsUseCase.swift */,
 			);
 			path = ValidateStepsUseCase;
+			sourceTree = "<group>";
+		};
+		6150A5C02C077746009A2F2A /* ValidateIngredientsUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				6150A5C12C077754009A2F2A /* ValidateIngredientsUseCaseProtocol.swift */,
+				6150A5C32C0785CD009A2F2A /* ValidateIngredientsUseCase.swift */,
+			);
+			path = ValidateIngredientsUseCase;
 			sourceTree = "<group>";
 		};
 		617067592BCA1E5800A44FB0 /* Main */ = {
@@ -698,6 +712,7 @@
 				614785152BDAE2F0007364C3 /* LocalFavoriteRepository.swift in Sources */,
 				6170675D2BCA1EE500A44FB0 /* FavoritesView.swift in Sources */,
 				6147852A2BE14A6F007364C3 /* DescriptionView.swift in Sources */,
+				6150A5C22C077754009A2F2A /* ValidateIngredientsUseCaseProtocol.swift in Sources */,
 				6150A5BD2C077673009A2F2A /* ValidateStepsUseCaseProtocol.swift in Sources */,
 				614785182BDAEA0A007364C3 /* RecipeDTO.swift in Sources */,
 				619087FF2BE4270B00CA1344 /* DefaultGetMyRecipesUseCase.swift in Sources */,
@@ -742,6 +757,7 @@
 				619087FD2BE426FD00CA1344 /* GetMyRecipesUseCase.swift in Sources */,
 				6147853C2BE167ED007364C3 /* CustomCurve.swift in Sources */,
 				619087F32BE41C9E00CA1344 /* AddRecipeUseCase.swift in Sources */,
+				6150A5C42C0785CD009A2F2A /* ValidateIngredientsUseCase.swift in Sources */,
 				5C78DE6E2BD827540063AA0F /* DefaultGetRecipesUseCase.swift in Sources */,
 				61364B772C0523C70057554A /* IsValidStringLengthUseCase.swift in Sources */,
 				614785072BDAB6C1007364C3 /* DefaultRemoveFavoriteUseCase.swift in Sources */,
