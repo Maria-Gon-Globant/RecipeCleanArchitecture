@@ -6,3 +6,6 @@
 //
 
 import Foundation
+protocol ValidateSectionUseCaseProtocol {
+    func execute(name: String, portion: String, time: String, image: String) -> String
+}
