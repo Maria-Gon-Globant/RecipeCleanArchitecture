@@ -45,3 +45,15 @@ enum JsonKeys: String {
     case MyRecipes = "myRecipes"
     case Users = "users"
 }
+
+enum ErrorString: String {
+    var id: String { return self.rawValue }
+    
+    case Name = "Invalid name, the recipe name must be greater than 5 and less than 50 characters"
+    case Portion = "Number of invalid portions, must be a positive number greater than 0 less than 20"
+    case Time = "Invalid time, the duration of the recipe must be a positive number greater than 0 less than 300 mins"
+    case Image =  "Invalid URL, the recipe URL must be greater than 5 and less than 200 characters"
+    case Description = "Invalid description, the recipe description must be greater than 5 and less than 200 characters"
+    case Steps = "Invalid steps, the recipe steps must be greater than 5 characters, less than 1000 characters and must be separated by a line break"
+    case Ingredients = "Invalid ingredients, the recipe ingredients must be greater than 5 characters, less than 1000 characters and must be separated by a line break"
+}
