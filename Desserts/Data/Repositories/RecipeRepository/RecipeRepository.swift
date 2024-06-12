@@ -8,7 +8,7 @@
 import Foundation
 protocol RecipeRepository {
     func getRecipes() -> [Recipe]
-    func saveRecipe(recipes: [Recipe])
+    func saveRecipe(recipes: [Recipe], myRecipes: [Recipe])
     func addRecipe(recipe: Recipe)
     func fetchMyRecipes() -> [Recipe]
 }

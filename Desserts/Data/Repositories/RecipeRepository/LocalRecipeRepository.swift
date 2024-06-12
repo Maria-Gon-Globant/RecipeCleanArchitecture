@@ -13,9 +13,9 @@ class LocalRecipeRepository: RecipeRepository {
         return data.recipes.map { $0.toRecipe() }
     }
     
-    func saveRecipe(recipes: [Recipe]) {
+    func saveRecipe(recipes: [Recipe], myRecipes: [Recipe]) {
         Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: JsonKeys.Recipe.id, to: JsonFiles.Recipe.id)
-        Bundle.main.encode(data: recipes.map { $0.toRecipeDTO() }, key: JsonKeys.MyRecipes.id, to: JsonFiles.MyRecipes.id)
+        Bundle.main.encode(data: myRecipes.map { $0.toRecipeDTO() }, key: JsonKeys.MyRecipes.id, to: JsonFiles.MyRecipes.id)
     }
     
     func fetchMyRecipes() -> [Recipe] {
@@ -24,10 +24,12 @@ class LocalRecipeRepository: RecipeRepository {
     }
 
     func addRecipe(recipe: Recipe) {
+        var myRecipes = fetchMyRecipes()
         var recipes = getRecipes()
         if !recipes.contains(where: { $0.id == recipe.id }) {
             recipes.append(recipe)
-            saveRecipe(recipes: recipes)
+            myRecipes.append(recipe)
+            saveRecipe(recipes: recipes, myRecipes: myRecipes)
         }
     }
 }
