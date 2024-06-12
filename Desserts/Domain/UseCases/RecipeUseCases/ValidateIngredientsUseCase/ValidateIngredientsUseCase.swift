@@ -19,7 +19,7 @@ class ValidateIngredientsUseCase: ValidateIngredientsUseCaseProtocol {
     func execute(ingredients: String) -> String {
         var rta: String = ""
         
-        if !isValidStringLength.execute(str: ingredients, maxLength: 200) || !hasNewLine.execute(str: ingredients) {
+        if !isValidStringLength.execute(str: ingredients, maxLength: 1000) || !hasNewLine.execute(str: ingredients) {
             rta = ErrorString.Ingredients.id
         }
         return rta

@@ -19,7 +19,7 @@ class ValidateStepsUseCase: ValidateStepsUseCaseProtocol {
     func execute(steps: String) -> String {
         var rta: String = ""
         
-        if !isValidStringLength.execute(str: steps, maxLength: 200) || !hasNewLine.execute(str: steps) {
+        if !isValidStringLength.execute(str: steps, maxLength: 1000) || !hasNewLine.execute(str: steps) {
             rta = ErrorString.Steps.id
         }
         return rta
